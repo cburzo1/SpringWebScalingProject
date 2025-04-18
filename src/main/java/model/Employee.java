@@ -4,19 +4,11 @@ import jakarta.persistence.*;
 
 import java.sql.Date;
 
-@Entity /*
-a real-world object or concept that you want to store information about.
-
-It typically corresponds to a table in a database.
-
-Each row in the table represents a specific instance of that entity.*/
-@Table(name = "tbl_Employee")
+@Entity
+@Table(name = "tbl_employee")
 public class Employee {
-    @id //Primary Key
+    @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    /*This annotation tells JPA/Hibernate how to
-    automatically generate values for the primary key of an entity
-    (usually annotated with @Id). AUTO_INCREMENT*/
     @Column
     private Integer id;
     @Column
@@ -81,4 +73,16 @@ public class Employee {
                 ", dob=" + dob +
                 '}';
     }
+
+
+    /*This annotation tells JPA/Hibernate how to
+    automatically generate values for the primary key of an entity
+    (usually annotated with @Id). AUTO_INCREMENT*/
+
+    /*
+a real-world object or concept that you want to store information about.
+
+It typically corresponds to a table in a database.
+
+Each row in the table represents a specific instance of that entity.*/
 }
